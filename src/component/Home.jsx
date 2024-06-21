@@ -11,14 +11,6 @@ function Home({ title }) {
 
   // Add withcredentials is important, because we are using session.
   const getUser = async () => {
-    // const { data } = await axios.get("http://localhost:8080/login/success", {
-    //   withCredentials: true,
-    // });
-
-    // if (data.success) {
-    //   setUser(data.user);
-    // }
-
     setUser(localStorage.getItem("jwtToken"))
   };
 

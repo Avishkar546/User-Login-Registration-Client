@@ -14,7 +14,7 @@ function Login({ title }) {
     e.preventDefault();
     try {
       const { data } = await axios.post(
-        "https://user-login-registration-with-google-sso.onrender.com/api/v1/user/login",
+        `${process.env.REACT_APP_BACKEND_URL}/api/v1/user/login`,
         { email, password }
       );
       console.log(data);

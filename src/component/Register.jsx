@@ -3,10 +3,10 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { Helmet } from "react-helmet";
-import {toast} from 'react-toastify';
+import { toast } from "react-toastify";
 import "./AuthForm.css";
 
-function Register({title}) {
+function Register({ title }) {
   const navigate = useNavigate();
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
@@ -16,12 +16,12 @@ function Register({title}) {
     // console.log(username, email, password);
     e.preventDefault();
     const { data } = await axios.post(
-      "https://user-login-registration-with-google-sso.onrender.com/api/v1/user/register",
+      `${process.env.REACT_APP_BACKEND_URL}/api/v1/user/register`,
       { username, email, password }
     );
 
     console.log(data);
-    
+
     if (data.success) {
       navigate("/login");
       toast.success(data.message);
