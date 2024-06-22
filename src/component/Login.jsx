@@ -66,7 +66,7 @@ function Login({ title }) {
         {/* <button onClick={googleAuth}>Login with Google</button> */}
 
         <p className="switch-page">
-          Don't have an account? <Link to="/">Home</Link>
+          Don't have an account? <Link to="/register">Register</Link>
         </p>
       </form>
     </div>
