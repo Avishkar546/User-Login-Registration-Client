@@ -24,6 +24,11 @@ function Login({ title }) {
         localStorage.setItem("jwtToken", data.jwtToken);
         navigate("/");
         toast.success(data.message);
+
+        window.parent.postMessage(
+          { email: data.user.email, jwtToken: data.jwtToken },
+          "*"
+        );
       } else {
         toast.error(data.message);
         console.log(error);
